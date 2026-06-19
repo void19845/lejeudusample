@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --black: #0A0A0A;
+  --surface: #141414;
+  --surface-2: #1C1C1C;
+  --border: #2A2A2A;
+  --border-2: #383838;
+  --gold: #C9A84C;
+  --gold-light: #F0C96A;
+  --gold-dim: #7A6230;
+  --text: #F0EDE6;
+  --muted: #888580;
+  --muted-2: #555250;
+  --green: #4CAF78;
+  --red: #E05555;
+}
+
+@theme inline {
+  --color-black: var(--black);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-border-2: var(--border-2);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dim: var(--gold-dim);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-muted-2: var(--muted-2);
+  --color-green: var(--green);
+  --color-red: var(--red);
+  --font-display: var(--font-playfair);
+  --font-sans: var(--font-inter);
+}
+
+html {
+  background: var(--black);
+  color-scheme: dark;
+}
+
+body {
+  background: var(--black);
+  color: var(--text);
+}
+
+@keyframes spin-vinyl {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.animate-vinyl {
+  animation: spin-vinyl 8s linear infinite;
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-vinyl { animation: none; }
+}
